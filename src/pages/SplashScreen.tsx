@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const SplashScreen: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/choose-role");
+      navigate.push("/chooserole");
     }, 2500);
+
     return () => clearTimeout(timer);
   }, [navigate]);
 
