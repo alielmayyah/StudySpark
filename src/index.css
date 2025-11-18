@@ -15,9 +15,10 @@
   font-weight: bold;
   font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-family: 'Nunito', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 option {
@@ -55,7 +56,7 @@ option {
 }
 
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  /* Removed duplicate global font-family */
 }
 
 option {
@@ -93,7 +94,7 @@ option {
 }
 
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  /* Removed duplicate global font-family */
 }
 
 option {
@@ -131,7 +132,7 @@ option {
 }
 
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  /* Removed duplicate global font-family */
 }
 
 option {

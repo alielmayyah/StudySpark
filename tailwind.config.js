@@ -5,7 +5,10 @@ module.exports = {
   darkMode: "class",
 
   theme: {
-    extend: {
+      fontFamily: {
+        sans: ['Nunito', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+      },
+      extend: {
       colors: {
         blueprimary: "#4AAAD6",
         redprimary: "#E14E54",
