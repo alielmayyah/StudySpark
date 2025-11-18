@@ -6,6 +6,10 @@ module.exports = {
 
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ["'Nunito'", "sans-serif"], // define custom font
+      },
+
       colors: {
         blueprimary: "#4AAAD6",
         redprimary: "#E14E54",
