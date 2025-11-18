@@ -7,7 +7,7 @@ const SplashScreen: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate.push("/chooserole");
-    }, 50000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, [navigate]);
