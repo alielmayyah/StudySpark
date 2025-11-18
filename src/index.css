@@ -1,0 +1,604 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+
+/* h1 {
+  color: aqua !important;
+  font: bold !important;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DGAgnadeen";
+  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+option {
+  font-family: "DGAgnadeen" !important;
+  border: 2px white solid;
+}
+.CustomFont {
+  font-family: "DGAgnadeen" !important;
+}
+
+#page-height {
+  height: calc(100vh - 80px);
+}
+

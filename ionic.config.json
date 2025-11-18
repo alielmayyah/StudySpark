@@ -1,0 +1,7 @@
+{
+  "name": "StudySpark",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
