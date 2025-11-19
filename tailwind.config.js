@@ -5,18 +5,11 @@ module.exports = {
   darkMode: "class",
 
   theme: {
-<<<<<<< HEAD
-      fontFamily: {
-        sans: ['Nunito', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
-      },
-      extend: {
-=======
     extend: {
       fontFamily: {
-        nunito: ["'Nunito'", "sans-serif"], // define custom font
+        nunito: ["'Nunito'", "sans-serif"],
       },
 
->>>>>>> e8fdc9b082ad667421fd7d1c52303cca9d8c889a
       colors: {
         blueprimary: "#4AAAD6",
         redprimary: "#E14E54",
