@@ -2,18 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "DGAgnadeen";
-  src: url("./fonts/DGAgnadeen-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DGAgnadeen";
-  src: url("./fonts/DGAgnadeen-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+/* 1. Define font-families */
+:root {
+  --font-nunito: "Nunito";
 }
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
@@ -56,6 +47,7 @@ option {
 }
 
 * {
+<<<<<<< HEAD
   /* Removed duplicate global font-family */
 }
 
@@ -603,3 +595,9 @@ option {
   height: calc(100vh - 80px);
 }
 
+=======
+  font-family: var(--font-nunito) !important;
+  @apply font-nunito;
+  font-weight: normal;
+}
+>>>>>>> e8fdc9b082ad667421fd7d1c52303cca9d8c889a

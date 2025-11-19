@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useHistory } from "react-router-dom";
 import logo from "../assets/Frame 1000003921.svg";
 import Input from "../components/Input";
 
 const Login = () => {
+  const history = useHistory();
+  
   // 1. Use State to manage input values
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,17 +45,17 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#121620] w-full h-full flex-center ">
+    <div className="bg-[#121620] w-screen h-screen flex-center ">
       <div className="flex flex-col bg-[#1B202D] w-[90%] border-[1px] border-[#2C3442] rounded-lg p-5">
         {/* Back Button and Header */}
-        <div className="flex items-center gap-1 mb-5">
+        <div className="flex items-center gap-1 mb-5 cursor-pointer" onClick={() => history.push('/chooserole')}>
           <IoMdArrowRoundBack color="#A1AAB7" />
           <h1 className="text-[#A1AAB7] font-bold">Back</h1>
         </div>
 
         <div className="flex items-center gap-3">
           <img src={logo} alt="" className="w-12 h-auto" />
-          <h1 className="text-2xl font-bold">Parent Sign In</h1>
+          <h1 className="text-2xl font-bold text-white">Parent Sign In</h1>
         </div>
 
         {/* Input Fields */}
@@ -80,8 +83,8 @@ const Login = () => {
         </div>
 
         <h1 className="mt-4 text-center text-[#A1AAB7]">
-          Don’t have an account?
-          <span className="text-[#25AFE8] cursor-pointer"> Register</span>
+          Don't have an account?
+          <span className="text-[#25AFE8] cursor-pointer" onClick={() => history.push('/register')}> Register</span>
         </h1>
       </div>
     </div>
