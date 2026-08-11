@@ -15,7 +15,7 @@ const SplashScreen: React.FC = () => {
   return (
     <div
       className="
-        w-screen h-screen flex items-center justify-center
+        w-full h-full min-h-screen flex items-center justify-center
         bg-[#121620] overflow-hidden
       "
     >

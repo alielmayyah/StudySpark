@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
 import { useHistory } from "react-router-dom";
 import logo from "../assets/Frame 1000003921.svg";
 import Input from "../components/Input";
+import { registerWithEmail, loginWithGoogle } from "../firebase/auth";
+import { addChild } from "../firebase/firestore";
 
 const Register = () => {
   const history = useHistory();
   
   // State to manage input values
   const [email, setEmail] = useState("");
+  const [parentName, setParentName] = useState("");
   const [childName, setChildName] = useState("");
+  const [childGender, setChildGender] = useState("");
   const [educationalYear, setEducationalYear] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   // Password validation checks
   const hasMinLength = password.length >= 8;
@@ -32,6 +39,13 @@ const Register = () => {
       type: "email",
       value: email,
       setter: setEmail,
+    },
+    {
+      label: "Parent Name",
+      placeholder: "Enter your name",
+      type: "text",
+      value: parentName,
+      setter: setParentName,
     },
     {
       label: "Child's Name",
@@ -61,22 +75,68 @@ const Register = () => {
 
   const grades = Array.from({ length: 9 }, (_, i) => `Grade ${i + 4}`);
 
-  const handleRegister = () => {
-    if (!email || !childName || !educationalYear || !password || !confirmPassword) {
-      alert("Please fill in all fields.");
+  const handleRegister = async () => {
+    if (!email || !parentName || !childName || !childGender || !educationalYear || !password || !confirmPassword) {
+      setError("Please fill in all fields.");
       return;
     }
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
       return;
     }
-    alert(`Registration Successful! Welcome ${childName}`);
-    console.log("Registration data:", { email, childName, educationalYear, password });
+    if (!hasMinLength || !hasCapital || !hasNumber || !hasSpecialChar) {
+      setError("Password does not meet requirements.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      // Register parent user
+      const user = await registerWithEmail(email, password, 'parent', parentName);
+      console.log("Registration successful for:", user.email);
+
+      // Add first child to Firestore
+      const gradeNumber = parseInt(educationalYear.replace('Grade ', ''));
+      await addChild(user.uid, {
+        name: childName,
+        age: gradeNumber + 5, // Approximate age based on grade
+        grade: educationalYear,
+        gender: childGender as 'male' | 'female',
+      });
+
+      alert(`Registration Successful! Welcome ${parentName}`);
+      history.push('/login');
+    } catch (err: any) {
+      setError(err.message || "Registration failed. Please try again.");
+      console.error("Registration error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Handle Google Sign-Up
+  const handleGoogleSignUp = async () => {
+    setLoading(true);
+    setError("");
+
+    try {
+      const user = await loginWithGoogle();
+      console.log("Google sign-up successful for:", user.email);
+      history.push('/parent-dashboard');
+    } catch (err: any) {
+      setError(err.message || "Google sign-up failed. Please try again.");
+      console.error("Google sign-up error:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="bg-[#121620] w-screen h-screen flex-center overflow-y-auto">
-      <div className="flex flex-col bg-[#1B202D] w-[90%] max-w-[500px] border-[1px] border-[#2C3442] rounded-lg p-5 my-5">
+    <div className="bg-[#121620] w-full h-screen overflow-y-auto">
+      <div className="min-h-full flex justify-center items-start pt-16 pb-8 px-4">
+        <div className="flex flex-col bg-[#1B202D] w-full max-w-[500px] border-[1px] border-[#2C3442] rounded-lg p-5 my-8">
         {/* Back Button and Header */}
         <div className="flex items-center gap-1 mb-5 cursor-pointer" onClick={() => history.push('/login')}>
           <IoMdArrowRoundBack color="#A1AAB7" />
@@ -122,6 +182,30 @@ const Register = () => {
             {grades.map((grade, index) => (
               <option key={index} value={grade}>{grade}</option>
             ))}
+          </select>
+        </div>
+
+        {/* Child's Gender Dropdown */}
+        <div className="my-2">
+          <label className="text-[#A1AAB7] text-sm font-medium mb-2 block">
+            Child's Gender
+          </label>
+          <select
+            value={childGender}
+            onChange={(e) => setChildGender(e.target.value)}
+            className="w-full bg-[#121621] border-[1px] border-[#495569] rounded-lg p-3 pr-8 text-white focus:outline-none focus:border-[#25AFF4] appearance-none"
+            style={{ 
+              backgroundPosition: 'right 0.5rem center',
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'/%3E%3C/svg%3E")',
+              backgroundSize: '1.5rem 1.5rem',
+              backgroundRepeat: 'no-repeat',
+              WebkitAppearance: 'none',
+              MozAppearance: 'none'
+            }}
+          >
+            <option value="" disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
           </select>
         </div>
 
@@ -200,18 +284,48 @@ const Register = () => {
           )}
         </div>
 
+        {/* Error Message */}
+        {error && (
+          <div className="bg-red-500/10 border border-red-500 text-red-500 rounded-lg p-3 mb-4">
+            <p className="text-sm">{error}</p>
+          </div>
+        )}
+
         {/* Register Button */}
         <div
-          className="w-full rounded-lg bg-[#25AFF4] p-3 flex-center cursor-pointer mt-4"
-          onClick={handleRegister}
+          className={`w-full rounded-lg bg-[#25AFF4] p-3 flex-center cursor-pointer mt-4 ${
+            loading ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+          onClick={loading ? undefined : handleRegister}
         >
-          <h1 className="font-bold text-[#151621]">Register</h1>
+          <h1 className="font-bold text-[#151621]">
+            {loading ? 'Registering...' : 'Register'}
+          </h1>
+        </div>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3 my-4">
+          <div className="flex-1 h-[1px] bg-[#2C3442]"></div>
+          <span className="text-[#A1AAB7] text-sm">OR</span>
+          <div className="flex-1 h-[1px] bg-[#2C3442]"></div>
+        </div>
+
+        {/* Google Sign Up Button */}
+        <div
+          className={`w-full rounded-lg bg-white p-3 flex items-center justify-center gap-2 cursor-pointer ${
+            loading ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+          onClick={loading ? undefined : handleGoogleSignUp}
+        >
+          <FcGoogle size={24} />
+          <h1 className="font-bold text-[#151621]">Continue with Google</h1>
         </div>
 
         <h1 className="mt-4 text-center text-[#A1AAB7]">
           Already have an account?
           <span className="text-[#25AFE8] cursor-pointer" onClick={() => history.push('/login')}> Sign In</span>
         </h1>
+      </div>
       </div>
     </div>
   );

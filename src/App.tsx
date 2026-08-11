@@ -13,6 +13,15 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SplashScreen from "./pages/SplashScreen";
 import ChooseRole from "./pages/ChooseRole";
+import StudentChat from "./pages/StudentChat";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import ParentDashboard from "./pages/ParentDashboard";
+import StudentAccess from "./pages/StudentAccess";
+import ParentChat from "./pages/ParentChat";
+import Subscription from "./pages/Subscription";
+import MyChildren from "./pages/MyChildren";
+import AddChild from "./pages/AddChild";
 
 import "./index.css";
 
@@ -108,6 +117,114 @@ const AnimatedRoutes = () => {
             className="h-full"
           >
             <Register />
+          </motion.div>
+        </Route>
+        <Route path="/student-chat">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <StudentChat />
+          </motion.div>
+        </Route>
+        <Route path="/forgot-password">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <ForgotPassword />
+          </motion.div>
+        </Route>
+        <Route path="/reset-password">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <ResetPassword />
+          </motion.div>
+        </Route>
+        <Route path="/parent-dashboard">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <ParentDashboard />
+          </motion.div>
+        </Route>
+        <Route path="/student-access">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <StudentAccess />
+          </motion.div>
+        </Route>
+        <Route path="/parent-chat">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <ParentChat />
+          </motion.div>
+        </Route>
+        <Route path="/subscription">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <Subscription />
+          </motion.div>
+        </Route>
+        <Route path="/my-children">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <MyChildren />
+          </motion.div>
+        </Route>
+        <Route path="/add-child">
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={loginVariants}
+            transition={loginTransition}
+            className="h-full"
+          >
+            <AddChild />
           </motion.div>
         </Route>
       </Switch>

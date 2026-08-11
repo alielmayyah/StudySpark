@@ -12,8 +12,9 @@ const ChooseRole: React.FC = () => {
   return (
     <IonPage>
       <IonContent 
-        className="flex flex-col items-center justify-center min-h-screen px-5 py-10 sm:px-2.5 sm:py-[18px] md:px-2.5 md:py-8"
+        className="flex flex-col items-center justify-center min-h-screen px-5 py-10 pt-16 sm:px-2.5 sm:py-[18px] md:px-2.5 md:py-8"
         style={{ '--background': '#121620' } as React.CSSProperties}
+        fullscreen
       >
 
         {/* Logo */}
@@ -51,7 +52,10 @@ const ChooseRole: React.FC = () => {
           </div>
 
           {/* Student */}
-          <div className="w-full max-w-[400px] h-[140px] bg-[#171c28] rounded-[18px] flex items-center p-10 border border-[#2a3244] hover:bg-[#1e2433] hover:border-[#ffbb00] cursor-pointer transition-all sm:p-4 sm:h-[110px] md:p-6 md:h-[130px]">
+          <div 
+            className="w-full max-w-[400px] h-[140px] bg-[#171c28] rounded-[18px] flex items-center p-10 border border-[#2a3244] hover:bg-[#1e2433] hover:border-[#ffbb00] cursor-pointer transition-all sm:p-4 sm:h-[110px] md:p-6 md:h-[130px]"
+            onClick={() => history.push('/student-access')}
+          >
             <IonIcon icon={bookOutline} className="text-[44px] text-[#facc15] mr-7 flex-shrink-0 sm:text-[36px] sm:mr-4" />
             <div className="flex-1">
               <h3 className="m-0 text-[#e4e7eb] text-2xl font-bold sm:text-xl">

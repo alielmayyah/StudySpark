@@ -1,0 +1,95 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isParent() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'parent';
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      
+      allow create: if isOwner(userId) && 
+                       request.resource.data.uid == userId &&
+                       request.resource.data.role in ['parent', 'student'];
+      
+      allow update: if isOwner(userId) && 
+                       request.resource.data.uid == userId &&
+                       request.resource.data.role == resource.data.role;
+      
+      allow delete: if false;
+    }
+    
+    // Children collection
+    match /children/{childId} {
+      // Allow parents to read their own children
+      allow read: if isAuthenticated() && 
+                     resource.data.parentId == request.auth.uid;
+      
+      // NEW: Allow students to verify access codes (limited query, no auth required)
+      // This allows the Student Access page to work
+      allow read: if request.query.limit <= 1;
+      
+      allow create: if isParent() && 
+                       request.resource.data.parentId == request.auth.uid &&
+                       request.resource.data.accessCode is string;
+      
+      allow update: if isAuthenticated() && 
+                       resource.data.parentId == request.auth.uid &&
+                       request.resource.data.parentId == resource.data.parentId;
+      
+      allow delete: if isAuthenticated() && 
+                       resource.data.parentId == request.auth.uid;
+    }
+    
+    // Messages collection
+    match /messages/{messageId} {
+      allow read: if isAuthenticated() && 
+                     (resource.data.senderId == request.auth.uid || 
+                      resource.data.receiverId == request.auth.uid);
+      
+      allow create: if isAuthenticated() && 
+                       request.resource.data.senderId == request.auth.uid;
+      
+      allow update: if isAuthenticated() && 
+                       resource.data.receiverId == request.auth.uid &&
+                       request.resource.data.read is bool;
+      
+      allow delete: if false;
+    }
+    
+    // Subscriptions collection
+    match /subscriptions/{subscriptionId} {
+      allow read: if isOwner(subscriptionId);
+      
+      allow create: if isParent() && 
+                       subscriptionId == request.auth.uid;
+      
+      allow update: if isOwner(subscriptionId);
+      
+      allow delete: if false;
+    }
+    
+    // Mail collection (for email functionality)
+    match /mail/{emailId} {
+      allow create: if isAuthenticated();
+      allow read, update, delete: if false;
+    }
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
